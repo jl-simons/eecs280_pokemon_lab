@@ -36,6 +36,24 @@ public:
 int main(int argc, char *argv[]) {
 
   // TODO: Add code to read command line args and open file streams here
+  if (argc != 3) {
+    cout << "Usage: battle.exe PLAYER_FILE GYM_LEADERS_FILE" << endl;
+    return 1;
+  }
+
+  std::string player_in_name = argv[1];
+  std::string gym_leaders_in_name = argv[2];
+
+  std::ifstream player_in(player_in_name);
+  if ( !player_in.is_open() ) {
+    cout << "Unable to open " << player_in_name << endl;
+    return 1;
+  }
+  std::ifstream gym_in(gym_leaders_in_name);
+  if ( !gym_in.is_open() ) {
+    cout << "Unable to open " << gym_leaders_in_name << endl;
+    return 1;
+  }
   
 
 
